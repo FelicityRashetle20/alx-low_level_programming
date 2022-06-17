@@ -25,4 +25,4 @@ char *_strcat(char *dest, char *src)
 			count2++;
 		}
 		return (dest);
-sh: 1: q: not found
+}
