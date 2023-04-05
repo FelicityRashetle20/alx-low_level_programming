@@ -33,7 +33,7 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
-	for (k = n; k < n; n++)
+	for (n = 0; n < l; n++)
 		outStr[n] = s1[n];
 
 	limit = m;
