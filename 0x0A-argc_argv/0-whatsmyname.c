@@ -5,7 +5,7 @@
  * main - Prints the program name
  * @argc: Count arguments
  * @argv: Arguments
- * Return: Always 
+ * Return: Always
  *
  */
 
