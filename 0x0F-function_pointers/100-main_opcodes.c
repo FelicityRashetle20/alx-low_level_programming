@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	for (z = 0; z < nbytes; z++)
 	{
-		printf("%02x", opc[i] & 0xFF);
+		printf("%02x", opc[z] & 0xFF);
 		if (z != nbytes - 1)
 			printf(" ");
 	}
