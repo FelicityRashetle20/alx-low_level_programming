@@ -35,7 +35,7 @@ void _is_zero(char *argv[])
 }
 
 /**
- * _initialize_array - a function that set memery to zero in 
+ * _initialize_array - a function that set memery to zero in
  * a new array
  * @ar: char array.
  * @lar: length of the char array.
