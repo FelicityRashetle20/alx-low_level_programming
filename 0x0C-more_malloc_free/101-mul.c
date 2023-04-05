@@ -4,30 +4,30 @@
 #include <ctype.h>
 
 /**
- * _is_zero - a funtion that determines if any number is zero
+ * _is_zero - a function that determines if any number is zero
  * @argv: argument vector.
  *
  * Return: no return.
  */
 void _is_zero(char *argv[])
 {
-	int x, isn1 = 1, isn2 = 1;
+	int x, n1 = 1, n2 = 1;
 
 	for (x = 0; argv[1][x]; x++)
 		if (argv[1][x] != '0')
 		{
-			isn1 = 0;
+			n1 = 0;
 			break;
 		}
 
 	for (x = 0; argv[2][x]; x++)
 		if (argv[2][x] != '0')
 		{
-			isn2 = 0;
+			n2 = 0;
 			break;
 		}
 
-	if (isn1 == 1 || isn2 == 1)
+	if (n1 == 1 || n2 == 1)
 	{
 		printf("0\n");
 		exit(0);
@@ -35,7 +35,8 @@ void _is_zero(char *argv[])
 }
 
 /**
- * _initialize_array - a function that set memory to zero in a new array
+ * _initialize_array - a function that set memery to zero in 
+ * a new array
  * @ar: char array.
  * @lar: length of the char array.
  *
@@ -52,7 +53,7 @@ char *_initialize_array(char *ar, int lar)
 }
 
 /**
- * _checknum - a funtion that determines length of the number
+ * _checknum - a function that determines length of the number
  * and checks if number is in base 10.
  * @argv: arguments vector.
  * @n: row of the array.
@@ -83,7 +84,7 @@ int _checknum(char *argv[], int n)
  */
 int main(int argc, char *argv[])
 {
-	int ln1, ln2, lnout, add, addl, x, j, k, ca;
+	int ln1, ln2, lnout, add, addl, i, j, k, ca;
 	char *nout;
 
 	if (argc != 3)
@@ -93,10 +94,10 @@ int main(int argc, char *argv[])
 	if (nout == NULL)
 		printf("Error\n"), exit(98);
 	nout = _initialize_array(nout, lnout);
-	k = lnout - 1, x = ln1 - 1, j = ln2 - 1, ca = addl = 0;
-	for (; k >= 0; k--, x--)
+	k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
+	for (; k >= 0; k--, i--)
 	{
-		if (x < 0)
+		if (i < 0)
 		{
 			if (addl > 0)
 			{
@@ -105,7 +106,7 @@ int main(int argc, char *argv[])
 					nout[k - 1] = (add / 10) + '0';
 				nout[k] = (add % 10) + '0';
 			}
-			x = ln1 - 1, j--, addl = 0, ca++, k = lnout - (1 + ca);
+			i = ln1 - 1, j--, addl = 0, ca++, k = lnout - (1 + ca);
 		}
 		if (j < 0)
 		{
@@ -113,11 +114,11 @@ int main(int argc, char *argv[])
 				break;
 			lnout--;
 			free(nout), nout = malloc(lnout + 1), nout = _initialize_array(nout, lnout);
-			k = lnout - 1, x = ln1 - 1, j = ln2 - 1, ca = addl = 0;
+			k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
 		}
 		if (j >= 0)
 		{
-			add = ((argv[1][x] - '0') * (argv[2][j] - '0')) + (nout[k] - '0') + addl;
+			add = ((argv[1][i] - '0') * (argv[2][j] - '0')) + (nout[k] - '0') + addl;
 			addl = add / 10, nout[k] = (add % 10) + '0';
 		}
 	}
